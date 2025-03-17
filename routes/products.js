@@ -1,17 +1,24 @@
 const express = require('express')
 const router = express.Router()
+const Product = require('../models/product')
+const Fitment = require('../models/fitment')
 
 router.use(logger)
 
+// All Products Route - Incomplete
 router.get('/', (req, res) => {
     req.query.title
     res.send('Product List')
 })
-  
+
+// New Product Route  - Incomplete 
 router.get('/new', (req, res) => {
-  res.render("products/new")
+ //  res.render(res, new Product())
+// res.render("products/new")
+res.send('New Product List')
 })
 
+// Create Product Route - Incomplete
 router.post('/', (req, res) => {
     const isValid = true
     if (isValid) {
