@@ -9,36 +9,37 @@
         </ul>
     </nav>
     <nav>
-        <div>       
-            <div>
-                <label>Year</label>         
-                <select name="year">
-                    <% fitments.forEach(fitment => { %>                             
-                        <option label="<%= fitment.year %>" value="<%= fitment.year %>"></option>    
-                    <% }) %>
-                </select>
-            </div>            
-            <div>
-                <label>Make</label>  
-                <select name="make">
-                    <% fitments.forEach(fitment => { %>     
-                        <option label="<%= fitment.make %>" value="<%= fitment.make %>"></option>    
-                    <% }) %>
-                </select>
+        <form action="/search" method="GET">
+            <div>       
+                <div>
+                    <label>Year</label>         
+                    <select name="year">
+                        <% fitments.forEach(fitment => { %>                             
+                            <option label="<%= fitment.year %>" value="<%= fitment.year %>"></option>    
+                        <% }) %>
+                    </select>
+                </div>            
+                <div>
+                    <label>Make</label>  
+                    <select name="make">
+                        <% fitments.forEach(fitment => { %>     
+                            <option label="<%= fitment.make %>" value="<%= fitment.make %>"></option>    
+                        <% }) %>
+                    </select>
+                </div>
+                <div>
+                    <label>Model</label>  
+                    <select name="model">
+                        <% fitments.forEach(fitment => { %>     
+                            <option label="<%= fitment.model %>" value="<%= fitment.model %>"></option>    
+                        <% }) %>
+                    </select>
+                </div>   
+                <div>
+                <button type="submit">Search</button>
+                </div>    
             </div>
-            <div>
-                <label>Model</label>  
-                <select name="model">
-                    <% fitments.forEach(fitment => { %>     
-                        <option label="<%= fitment.model %>" value="<%= fitment.model %>"></option>    
-                    <% }) %>
-                </select>
-            </div>   
-            <div>
-               <button>Cancel</button> 
-               <a href="">Search</a>
-            </div>    
-        </div>
+        </form>
     </nav>   
 </header>
 <br>

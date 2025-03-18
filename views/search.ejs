@@ -1,0 +1,20 @@
+<h2>Search Results</h2>
+
+<div>
+    <% products.forEach(product => { %>
+        <div>
+            <div>
+                <img src="<%= product.coverImagePath %>"" width="100">
+            </div>
+            <div>
+                <%= product.title %> 
+            </div>
+            <div>
+                <%= product.price %> 
+            </div>
+            <div>
+                <%= product.fitment %> 
+            </div>
+        </div>       
+    <% }) %> 
+</div>

@@ -20,6 +20,7 @@ app.use(async (req, res, next) => {
 });
 
 const indexRouter = require('./routes/index')
+const searchRouter = require('./routes/search')
 const productRouter = require('./routes/products')
 const fitmentRouter = require('./routes/fitments')
 
@@ -39,6 +40,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))    
 
 app.use('/', indexRouter)
+app.use('/', searchRouter)
 app.use('/products', productRouter)
 app.use('/fitments', fitmentRouter)
 
