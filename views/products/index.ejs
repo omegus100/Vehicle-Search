@@ -2,5 +2,8 @@
 <div>       
     <% products.forEach(product => { %>           
         <img src="<%= product.coverImagePath %>" alt="<%= product.title %>" width="100">  
+        <p><%= product.title %></p>
+        <p><%= product.price %></p>
+        <p>Fitment: <%= product.fitment %></p>
     <% }) %>        
 </div> 
