@@ -6,6 +6,18 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
+const Fitment = require('./models/fitment');
+
+// Middleware to fetch fitments and add to res.locals
+app.use(async (req, res, next) => {
+    try {
+        const fitments = await Fitment.find();
+        res.locals.fitments = fitments;
+    } catch (err) {
+        res.locals.fitments = [];
+    }
+    next();
+});
 
 const indexRouter = require('./routes/index')
 const productRouter = require('./routes/products')
