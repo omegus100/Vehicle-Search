@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" value="<%= product.title %>">        
+    </div>
+    <div>
+        <label>Price</label>
+        <input type="number" name="price" value="<%= product.price %>" min="0.01" step="0.01">  
+    </div>
+    <div>
+        <label>Image</label>
+        <input type="file" name="image">    
+    </div>
+    <div>
+        <label>Fitment</label>       
+        <select name="fitment">        
+            <% fitments.forEach(fitment => { %>
+                <% if (fitment.id === product.fitment) {%>   
+                    <option selected 
+                            label="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>" 
+                            value="<%= fitment.id %>"> 
+                        <% } else { %>
+                    <option label="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>" 
+                            value="<%= fitment.id %>">
+                        <% } %>    
+                    </option>                   
+                <% }) %>
+        </select>
+    </div>
+</div>

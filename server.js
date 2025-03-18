@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
-const Fitment = require('./models/fitment');
+const Fitment = require('./models/fitment')
 
 // Middleware to fetch fitments and add to res.locals
 app.use(async (req, res, next) => {
