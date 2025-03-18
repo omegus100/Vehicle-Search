@@ -9,8 +9,12 @@ router.get('/search', async (req, res) => {
         // Find the fitment based on year, make, and model
         const fitment = await Fitment.findOne({ year, make, model })
 
-        // Use the fitment ID to find related products
+        // Use the fitment params to find related products
         const products = await Product.find({ fitment: fitment._id })
+
+        if (products.length === 0) {
+            return res.send('No products found for this fitment')
+        }
   
         res.render('search', { products })
     } catch {
