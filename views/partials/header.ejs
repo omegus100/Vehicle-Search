@@ -14,24 +14,40 @@
                 <div>
                     <label>Year</label>         
                     <select name="year">
+                      
                         <% fitments.forEach(fitment => { %>                             
-                            <option label="<%= fitment.year %>" value="<%= fitment.year %>"></option>    
+                            <option class="fitment-option"    
+                                    label="<%= fitment.year %>" 
+                                    value="<%= fitment.year %>"
+                                    data-year></option>    
                         <% }) %>
                     </select>
                 </div>            
                 <div>
                     <label>Make</label>  
-                    <select name="make">
+                    <select name="make" data-previous-fitment-type="year">
+          
                         <% fitments.forEach(fitment => { %>     
-                            <option label="<%= fitment.make %>" value="<%= fitment.make %>"></option>    
+                            <option class="fitment-option" 
+                                    label="<%= fitment.make %>" 
+                                    value="<%= fitment.make %>" 
+                                    data-fitment="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>"
+                                    data-previous-value="<%= fitment.year %>"
+                                    data-make></option>    
                         <% }) %>
                     </select>
                 </div>
                 <div>
                     <label>Model</label>  
-                    <select name="model">
+                    <select name="model" data-previous-fitment-type="make">
+                        
                         <% fitments.forEach(fitment => { %>     
-                            <option label="<%= fitment.model %>" value="<%= fitment.model %>"></option>    
+                            <option class="fitment-option" 
+                                    label="<%= fitment.model %>" 
+                                    value="<%= fitment.model %>" 
+                                    data-fitment="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>"
+                                    data-previous-value="<%= fitment.make %>"
+                                    data-model></option>    
                         <% }) %>
                     </select>
                 </div>   
