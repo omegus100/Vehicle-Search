@@ -1,3 +1,6 @@
-select option:disabled {
+@import 'shared/vehicle-search.css';
+
+select option:disabled, .hide {
     display: none;
 }
+

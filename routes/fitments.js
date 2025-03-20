@@ -4,11 +4,6 @@ const Fitment = require('../models/fitment')
 
 // All Fitments Route
 router.get('/', async (req, res) => {
-    // res.send("Product List")
-    // let searchOptions = {} 
-    // if (req.query.year != null && req.query.year !== ''){
-    //     searchOptions.year = new RegExp(req.query.year, 'i')
-    // }
     try {
         const fitments = await Fitment.find()
         res.render('fitments/index', { fitments: fitments })

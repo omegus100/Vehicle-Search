@@ -13,46 +13,46 @@
             <div>       
                 <div>
                     <label>Year</label>         
-                    <select name="year">
-                      
+                    <select name="year" class="vehicle-search-dropdown">               
+                        <option value="select">Select Year</option>
                         <% fitments.forEach(fitment => { %>                             
                             <option class="fitment-option"    
                                     label="<%= fitment.year %>" 
                                     value="<%= fitment.year %>"
-                                    data-year></option>    
+                                    data-fitment-type="year"></option>    
                         <% }) %>
                     </select>
                 </div>            
                 <div>
                     <label>Make</label>  
-                    <select name="make" data-previous-fitment-type="year">
-          
+                    <select name="make" class="vehicle-search-dropdown" data-previous-fitment-type="year">
+                        <option value="select" data-fitment>Select Make</option>
                         <% fitments.forEach(fitment => { %>     
                             <option class="fitment-option" 
                                     label="<%= fitment.make %>" 
                                     value="<%= fitment.make %>" 
                                     data-fitment="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>"
                                     data-previous-value="<%= fitment.year %>"
-                                    data-make></option>    
+                                    data-fitment-type="make"></option>    
                         <% }) %>
                     </select>
                 </div>
                 <div>
                     <label>Model</label>  
-                    <select name="model" data-previous-fitment-type="make">
-                        
+                    <select name="model" class="vehicle-search-dropdown" data-previous-fitment-type="make">
+                        <option value="select" data-fitment>Select Model</option>
                         <% fitments.forEach(fitment => { %>     
                             <option class="fitment-option" 
                                     label="<%= fitment.model %>" 
                                     value="<%= fitment.model %>" 
                                     data-fitment="<%= fitment.year %> <%= fitment.make %> <%= fitment.model %>"
                                     data-previous-value="<%= fitment.make %>"
-                                    data-model></option>    
+                                    data-fitment-type="model"></option>    
                         <% }) %>
                     </select>
                 </div>   
                 <div>
-                <button type="submit">Search</button>
+                <button type="submit" class="btn vehicle-search-btn" disabled>Search</button>
                 </div>    
             </div>
         </form>
